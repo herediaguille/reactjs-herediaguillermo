@@ -1,23 +1,31 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { doc, getDoc, getFirestore } from "firebase/firestore"
+
 import { mfetch } from "../../helpers/mFetch"
 import { ItemCounter } from "../ItemCounter/ItemCounter"
 import { Link, useParams } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
-const onAdd = cant => {
-    console.log(cant)
-}
+import { CartContext } from "../../CartContext/CartContext"
 
 export const ItemDetailContainer = () => {
-const [ product, setProduct ] = useState ([])
+    const [ product, setProduct ] = useState ([])
     const { pid } = useParams()
     
-    useEffect(()=> {
-        mfetch(pid)
-        .then(resultado => setProduct(resultado))
-        .catch(error => console.log(error))
-    }, [])
+    const {agregarAlCarrito, cartList} = useContext (CartContext)
+    
+    const onAdd = cant => {
+        agregarAlCarrito({ ...product, cant })
+    }
+    console.log(cartList)
+    
+    useEffect(()=>{
+        const dbFirestore = getFirestore()
+        const queryDoc = doc(dbFirestore, 'products', pid) 
+        getDoc(queryDoc)
+        .then(res => setProduct( { id: res.id , ...res.data() } ))
+        .catch(err => console.log(err))
+    },[])
     return (
         <div className="container">
             <div className="row"> 

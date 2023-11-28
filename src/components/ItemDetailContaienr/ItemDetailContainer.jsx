@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
 
-import { mfetch } from "../../helpers/mFetch"
 import { ItemCounter } from "../ItemCounter/ItemCounter"
 import { Link, useParams } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
@@ -12,12 +11,11 @@ export const ItemDetailContainer = () => {
     const [ product, setProduct ] = useState ([])
     const { pid } = useParams()
     
-    const {agregarAlCarrito, cartList} = useContext (CartContext)
+    const {addToCart, cartList} = useContext (CartContext)
     
     const onAdd = cant => {
-        agregarAlCarrito({ ...product, cant })
+        addToCart({ ...product, cant })
     }
-    console.log(cartList)
     
     useEffect(()=>{
         const dbFirestore = getFirestore()

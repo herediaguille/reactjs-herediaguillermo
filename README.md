@@ -2,12 +2,6 @@
 Demo: https://6563fa93909461637abbd851--resilient-tulumba-38c711.netlify.app/
 GitHub: https://github.com/herediaguille/reactjs-herediaguillermo/tree/main
 
-Librerias:
-Firebase
-Bootstrap
-react-bootstrap
-react-icons
-react-router-dom
 
 ## Librerias
 

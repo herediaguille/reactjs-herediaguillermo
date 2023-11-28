@@ -8,21 +8,23 @@ export const CartContextProvider = ({children}) => {
     
     const [cartList, setCartList] = useState([])
 
+    const addToCart = (newProduct) => {
+        const ProductIndex = cartList.findIndex((product) => product.id === newProduct.id);
+    
+        if (ProductIndex !== -1) {
+          const updatedCart = [...cartList];
+          updatedCart[ProductIndex].cant += newProduct.cant;
+          setCartList(updatedCart);
+        } else {
+          setCartList((prevCart) => [...prevCart, newProduct]);
+        }
+      }
 
-    const agregarAlCarrito = (product) => {
-
-        setCartList([
-            ...cartList,
-            product
-        ])
-
-    }
-
-    const calcularTotalProductos = (cartList) => {
-        return cartList.reduce((totalProductos, product) => totalProductos + product.cant, 0);
+    const totalQuantity = (cartList) => {
+        return cartList.reduce((totalProduct, product) => totalProduct + product.cant, 0);
     }
      
-    const eliminarProducto = (productId) => {
+    const removeProduct = (productId) => {
         const productToDelete = cartList.find((product) => product.id === productId);
 
         if (productToDelete) {
@@ -38,17 +40,17 @@ export const CartContextProvider = ({children}) => {
         }
     };
 
-    const vaciarCarrito = () => {
+    const emptyCart = () => {
         setCartList([])
     }
 
     return(
         <CartContext.Provider value={{
             cartList,
-            agregarAlCarrito,
-            eliminarProducto,
-            calcularTotalProductos,
-            vaciarCarrito
+            addToCart,
+            removeProduct,
+            totalQuantity,
+            emptyCart
         }}>
             {children}
         </CartContext.Provider>

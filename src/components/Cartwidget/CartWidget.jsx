@@ -5,11 +5,11 @@ import { BsFillCartFill } from "react-icons/bs";
 
 export const CartWidget = () => {
 
-    const { cartList, calcularTotalProductos } = useContext(CartContext)
+    const { cartList, totalQuantity } = useContext(CartContext)
     
     return (
         <div>
-            <span>{calcularTotalProductos(cartList)}</span>
+            <span>{totalQuantity(cartList) !== 0 && totalQuantity(cartList)}</span>
             <BsFillCartFill />
         </div>
     )

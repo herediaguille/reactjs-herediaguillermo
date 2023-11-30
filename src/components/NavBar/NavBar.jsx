@@ -19,7 +19,7 @@ function NavBar() {
             <Navbar expand="lg" className="bg-body-tertiary">
               <Container>
                 <Link to="/" >
-                  <img src='../../public/assets/black-pan.png' alt="" />
+                  <img src='https://drive.google.com/uc?export=download&id=1QV4GhbIC1Qq9kKxI_PO8KrgcVyGPc1r7' alt="" />
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

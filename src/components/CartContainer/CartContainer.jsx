@@ -1,8 +1,8 @@
 import { FormBuying } from "../FormBuying/FormBuying";
 import { useContext, useState } from "react"
 import { CartContext } from "../../CartContext/CartContext"
+import { ItemCart } from "../ItemCart/ItemCart";
 
-import { ItemCart } from "../ItemCart/ItemCart.Jsx";
 
 export const CartContainer = () => {
 
@@ -25,9 +25,9 @@ export const CartContainer = () => {
                 <div>
                     <div className="container"> 
                     {cartList.map(product => 
-                    <div className="row">
-                        <ItemCart/>
-                    </div>
+                        <div className="row" key={product.id}>
+                            <ItemCart product={product} removeProduct={removeProduct}/>
+                        </div>
                     )}
                     {totalPrice() !== 0 && <p className="text-center">Precio total = ${totalPrice()}</p>}
                     </div>

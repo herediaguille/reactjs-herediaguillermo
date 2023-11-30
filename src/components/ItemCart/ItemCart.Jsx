@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-export function ItemCart () {
+export function ItemCart ({ product, removeProduct }) {
 
     return (
         <>

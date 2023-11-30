@@ -16,10 +16,10 @@ export const CartContainer = () => {
 
     return (
         <>
-            {isId !== '' && <h2>El Id de la compra es {isId} </h2>}
+            {isId !== '' && <h2 className="title-carrito">El Id de la compra es {isId} </h2>}
             { cartList.length === 0 && isId === '' ? 
                 <>
-                    <h2 className="text-center">No hay productos en el carrito</h2>
+                    <h2 className="text-center title-carrito">No hay productos en el carrito</h2>
                 </>
                 :
                 <div>
@@ -29,7 +29,7 @@ export const CartContainer = () => {
                             <ItemCart product={product} removeProduct={removeProduct}/>
                         </div>
                     )}
-                    {totalPrice() !== 0 && <p className="text-center">Precio total = ${totalPrice()}</p>}
+                    {totalPrice() !== 0 && <h3 className="title-carrito price-total">Precio total = ${totalPrice()}</h3>}
                     </div>
                     <FormBuying totalPrice={totalPrice} />        
                 </div>

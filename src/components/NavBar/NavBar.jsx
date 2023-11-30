@@ -16,7 +16,7 @@ const categories = [
 function NavBar() {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-body-tertiary nav-styles">
               <Container>
                 <Link to="/" >
                   <img src='https://drive.google.com/uc?export=download&id=1QV4GhbIC1Qq9kKxI_PO8KrgcVyGPc1r7' alt="" />

@@ -6,12 +6,12 @@ export function ItemCart ({ product, removeProduct }) {
     return (
         <>
             <div className="col-lg-3 col-md-6" >
-                        <Card>
+                        <Card className="card-styles">
                             <Card.Img variant="top" src={product.img} alt={product.title} className="rounded d-block"/>
                         </Card> 
                     </div>
                     <div className="col-lg-6 col-md-6">
-                        <Card  >
+                        <Card className="card-styles card-cart">
                             <Card.Body>
                                 <Card.Title>{product.title}</Card.Title>
                                 <Card.Text>

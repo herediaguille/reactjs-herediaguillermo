@@ -6,11 +6,11 @@ export function Item ({ product }) {
     return (
     <>  
         <div className="col-lg-3 col-md-6">
-        <Card key={product.id} >
+        <Card key={product.id} className="card-styles">
           <Card.Img variant="top" src={product.img} alt={product.title} className="rounded d-block"/>
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
-            <Card.Text>
+            <Card.Text className="card-home">
                 {product.description}
             </Card.Text>
           </Card.Body>

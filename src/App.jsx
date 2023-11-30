@@ -8,8 +8,8 @@ import { CartContainer } from './components/CartContainer/CartContainer.jsx';
 import { ItemDetailContainer } from './components/ItemDetailContaienr/ItemDetailContainer.jsx';
 import { CartContextProvider } from './CartContext/CartContext.jsx';
 //Estilos
-//import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 function App() {
 

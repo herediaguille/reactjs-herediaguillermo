@@ -28,15 +28,15 @@ export const ItemDetailContainer = () => {
         <div className="container">
             <div className="row"> 
             <div className="col-lg-3 col-md-6">
-                <Card>
+                <Card className="card-styles">
                     <Card.Img variant="top" src={product.img} alt={product.title} className="rounded d-block"/>
                 </Card> 
             </div>
             <div className="col-lg-6 col-md-6">
-                <Card key={product.id} >
+                <Card key={product.id} className="card-styles">
                     <Card.Body>
                         <Card.Title>{product.title}</Card.Title>
-                        <Card.Text>
+                        <Card.Text className="card-detail">
                             {product.description}
                         </Card.Text>
                     </Card.Body>

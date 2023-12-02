@@ -20,7 +20,7 @@ body {
   height: 95%;
 }
 
-.title-carrito {
+.title-cart {
   color: white;
 }
 
@@ -31,4 +31,11 @@ body {
 .price-total {
   margin-top: 20px;
   text-align: center;
+}
+
+.spinner-loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }

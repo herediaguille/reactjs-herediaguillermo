@@ -26,7 +26,7 @@ export function FormBuying ({ totalPrice }) {
         const queryCollection = collection (db, 'orders')
 
         addDoc(queryCollection, order)
-        .then (({id}) => console.log(id))
+        .then (({id}) => setIsId(id))
         .catch (error => console.log(error))
         .finally (()=> {
             setformData({
@@ -47,22 +47,22 @@ export function FormBuying ({ totalPrice }) {
     return (
         <>
             <Form className="container">
-                <Form.Group className="mb-3 title-carrito" controlId="">
+                <Form.Group className="mb-3 title-cart" controlId="">
                     <Form.Label>Ingresar Nombre</Form.Label>
                     <Form.Control type="text" name="name" required onChange={handleOnChange} value={formData.name} />
                 </Form.Group>
 
-                <Form.Group className="mb-3 title-carrito" controlId="">
+                <Form.Group className="mb-3 title-cart" controlId="">
                     <Form.Label>Ingresar Telefono</Form.Label>
                     <Form.Control type="text" name="phone" required onChange={handleOnChange} value={formData.phone} />
                 </Form.Group>
 
-                <Form.Group className="mb-3 title-carrito" controlId="">
+                <Form.Group className="mb-3 title-cart" controlId="">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="text" name="email" required onChange={handleOnChange} value={formData.email} />
                 </Form.Group>
 
-                <Form.Group className="mb-3 title-carrito" controlId="">
+                <Form.Group className="mb-3 title-cart" controlId="">
                     <Form.Label>Ingresar Dirección</Form.Label>
                     <Form.Control type="text" name="adress" required onChange={handleOnChange} value={formData.adress} />
                 </Form.Group>

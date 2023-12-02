@@ -4,9 +4,10 @@ import { collection, doc, getDoc, getDocs, getFirestore, limit, orderBy, query, 
 import { ItemList } from "../ItemList/ItemList"
 
 import { useParams } from "react-router-dom"
+import { Loading } from "../Loading/Loading"
 
 
-function ItemListContainer({ greeting = 'saludos' }) {
+function ItemListContainer() {
     const [ products, setProducts ] = useState([])
     const [ loading, setLoading ]   = useState(true)
 
@@ -21,14 +22,15 @@ function ItemListContainer({ greeting = 'saludos' }) {
         getDocs(queryFilter)
         .then(res =>{ setProducts( res.docs.map(product => ({ id: product.id , ...product.data() }) ) )})
         .catch(error => console.log(error)) 
-        
+        .finally(() => setLoading(false))
     }, [cid])
     return (
         <>
-            <div>
-                {greeting}
-            </div>
+            {loading ? 
+            <Loading/>
+            :
             <ItemList products={products}/>
+            }
         </>
     )
 }

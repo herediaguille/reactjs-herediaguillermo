@@ -33,6 +33,10 @@ body {
   text-align: center;
 }
 
+.btn--buy{
+  background: #f1c200;
+}
+
 .spinner-loading{
   display: flex;
   align-items: center;

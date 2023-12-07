@@ -53,6 +53,9 @@ export const ItemDetailContainer = () => {
                             <ItemCounter onAdd={onAdd}/>
                         </Card> 
                     </div>
+                    <Link to="/" className="d-grid gap-2 col-6 mx-auto">
+                        <button className='btn btn-warning btn--buy m-2'>Seguir Comprando</button>
+                    </Link>
                 </div>
             </div>
             }
